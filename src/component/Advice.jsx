@@ -1,24 +1,24 @@
 import React, { useEffect, useState } from "react";
 import "../App.css";
+import "../style/Advice.css"
 import Dice from "../assets/icon-dice.svg";
 import Pattern from "../assets/pattern-divider-mobile.svg";
+import pattern from "../assets/pattern-divider-desktop.svg";
 const Advice = () => {
-  const [advice, setAdvice] = useState(
-    "It is easy to sit up and take notice, what is difficult is getting up and taking action"
-  );
+  const [advice, setAdvice] = useState(" ");
 
   const fetchAdvice = async () => {
     try {
       const request = await fetch("https://api.adviceslip.com/advice");
       const response = await request.json();
       console.log(response);
-      setAdvice(response.slip.advice);
+      setAdvice({ id: response.slip.id, text: response.slip.advice });
     } catch (error) {
       console.log(error.message);
     }
   };
   console.log(advice);
- 
+
   useEffect(() => {
     fetchAdvice();
   }, []);
@@ -26,21 +26,38 @@ const Advice = () => {
   return (
     <>
       <main className="wrapper">
-        <div className="  box">
-          <div className="card "  >
-            <h4>ADVICE # {advice.id} </h4>
-
-            <p>{advice}</p>
-            <div className="pattern">
-              <img src={Pattern} alt="" className="pattern-img" />
+        <div className="box">
+          <div className="card  " >
+            {/* mobile */}
+            <div
+              className="d-lg-none container "
+              style={{ width: "350px", height: "300px" }}
+            >
+              <h4>ADVICE #{advice.id} </h4>
+              <p className="w-100">{advice.text}</p>
+              <div className="pattern ">
+                <img src={Pattern} alt="" className="pattern-img" />
+              </div>
             </div>
-          </div>
+            {/* desktop */}
+            <div
+              className="d-none d-lg-block"
+              style={{ width: "750px", height: "250px" }}
+            >
+              <h4>ADVICE #{advice.id} </h4>
+              <p className="w-100">{advice.text}</p>
+              <div className="pattern ">
+                <img src={pattern} alt="" className="pattern-img" />
+              </div>
+            </div>
 
-          <div className="dice">
-            <button onClick={fetchAdvice}>
-              <img src={Dice} alt="" className="dice-img" />
-            </button>
+            
           </div>
+          <div className="dice">
+              <button onClick={fetchAdvice}>
+                <img src={Dice} alt="" className="dice-img" />
+              </button>
+            </div>
         </div>
       </main>
     </>

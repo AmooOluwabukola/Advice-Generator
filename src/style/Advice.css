@@ -1,4 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
 .wrapper{
   background-color:  hsl(218, 23%, 16%);
@@ -10,6 +10,7 @@
   display: flex;
  justify-content: center;
   align-items: center;
+  
  
 }
 
@@ -18,8 +19,6 @@
 background-color: hsl(217, 19%, 24%);
  height:350px;
  text-align: center;
-
-
  border-radius: 1rem;
  background-color: hsl(217, 19%, 24%);
  align-items: center;
@@ -64,7 +63,7 @@ p{
   color: hsl(193, 38%, 86%);
   font-weight: 800;
   font-family: "Manrope", sans-serif;
-  font-size: 24px;
+  font-size: 23px;
 }
  h4{
   margin-top: 2rem;
@@ -76,9 +75,9 @@ p{
 
 
 
-@media(min-width:1024px) {
+@media(min-width:768px) {
   .card{
-    width:40%;
+    width:800px;
     max-width: 1440px;
     height:40%;
     text-align: center;
@@ -99,8 +98,8 @@ p{
     align-items: center;
     border: none;
     cursor: pointer;
-    top: 70%;
+    top: 69%;
     bottom: 0;
     left: 49%;
   }  
-} */
+}
