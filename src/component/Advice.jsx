@@ -25,40 +25,21 @@ const Advice = () => {
 
   return (
     <>
-      <main className="wrapper">
-        <div className="box">
-          <div className="card  " >
-            {/* mobile */}
-            <div
-              className="d-lg-none container "
-              style={{ width: "350px", height: "300px" }}
-            >
-              <h4>ADVICE #{advice.id} </h4>
-              <p className="w-100">{advice.text}</p>
-              <div className="pattern ">
-                <img src={Pattern} alt="" className="pattern-img" />
-              </div>
-            </div>
-            {/* desktop */}
-            <div
-              className="d-none d-lg-block"
-              style={{ width: "750px", height: "250px" }}
-            >
+      <main className="wrapper box">
+          <div className="card" >
               <h4>ADVICE #{advice.id} </h4>
               <p className="w-100">{advice.text}</p>
               <div className="pattern ">
                 <img src={pattern} alt="" className="pattern-img" />
               </div>
-            </div>
-
-            
-          </div>
-          <div className="dice">
+          
+            <div className="dice">
               <button onClick={fetchAdvice}>
                 <img src={Dice} alt="" className="dice-img" />
               </button>
             </div>
-        </div>
+          </div>
+        
       </main>
     </>
   );
