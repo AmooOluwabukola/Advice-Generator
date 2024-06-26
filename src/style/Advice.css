@@ -15,8 +15,8 @@
 }
 
 .card {
-  width: 70%;
-  max-width: 700px;
+  width: 80%;
+  max-width: 600px;
   text-align: center;
   border-radius: 1rem;
   background-color: hsl(217, 19%, 24%);
@@ -28,15 +28,15 @@
 button {
   background-color: hsl(150, 100%, 66%);
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   position: absolute;
   align-items: center;
   border: none;
   cursor: pointer;
-  top: 99%;
-  bottom: 0;
-  left: 47%;
+  transform: translateX(-50%);
+  bottom: -36px;
+  left: 50%;
   display: flex;
   justify-content: center;
 }
@@ -45,17 +45,17 @@ button:hover {
 }
 
 .dice-img {
-  width: 15px;
+  width: 20px;
 }
 .pattern-img {
   display: block;
   width: 90%;
   max-width: 700px;
-  margin: 10px auto;
+  margin: 27px auto;
 
 }
 
-p {
+p{
   margin: 0;
   padding: 0.5rem;
   color: hsl(193, 38%, 86%);
@@ -73,7 +73,8 @@ h4 {
 
 @media (max-width: 375px) {
   .card {
-    width: 100%;
+   
+ 
     text-align: center;
     border-radius: 1rem;
  
@@ -86,5 +87,14 @@ h4 {
   }
   .pattern-img {
     width: 60%;
+  }
+
+  p{
+   
+    font-size: 24px;
+  }
+  h4 {
+   
+    font-size: 10px;
   }
 }
